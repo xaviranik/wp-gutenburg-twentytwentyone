@@ -13,7 +13,11 @@ registerBlockType("xvr/call-to-action", {
 
   // Define the edit function
   edit: function (props) {
-    return null;
+    return (
+      <div>
+        <h2>{__("Call to action", "xvr")}</h2>
+      </div>
+    );
   },
 
   // Define the save function

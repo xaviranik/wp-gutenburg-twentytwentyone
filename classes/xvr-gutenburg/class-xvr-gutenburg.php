@@ -100,7 +100,7 @@
         // Register script
         wp_register_script(
             'xvr-gutenberg-block-cta',
-            get_theme_file_uri( 'assets/js/xvr-gutenburg-block-cta.js' ),
+            get_theme_file_uri( 'build/index.js' ),
             [ 'wp-blocks', 'wp-element', 'wp-editor' ],
             '1.0.0',
             false,
