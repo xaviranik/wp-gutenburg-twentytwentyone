@@ -1,2 +1,2 @@
 # wp-gutenburg-twentytwentyone
- Custom gutenburg block development for 2k21 theme
+ Custom gutenburg block development for twentytwentyone theme
