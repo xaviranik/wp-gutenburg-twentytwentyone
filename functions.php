@@ -553,6 +553,10 @@ require get_template_directory() . '/inc/block-styles.php';
 require_once get_template_directory() . '/classes/class-twenty-twenty-one-dark-mode.php';
 new Twenty_Twenty_One_Dark_Mode();
 
+// XVR Gutenburg.
+require_once get_template_directory() . '/classes/xvr-gutenburg/class-xvr-gutenburg.php';
+new XVR_Gutenburg();
+
 /**
  * Enqueue scripts for the customizer preview.
  *
