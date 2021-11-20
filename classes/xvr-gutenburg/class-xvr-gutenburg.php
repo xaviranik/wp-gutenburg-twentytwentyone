@@ -14,10 +14,13 @@
      */
     public function __construct() {
         add_action( 'after_setup_theme', [ $this, 'theme_default_colors' ], 11 );
+        
+        // Register block type 
+        add_action( 'init', [ $this, 'register_block_type' ] );
     }
 
     /**
-     * Theme Default Colors
+     * Theme default colors
      *
      * @since 1.0.0
      */
@@ -27,7 +30,7 @@
     }
 
     /**
-     * Default Editor Pallate
+     * Default editor pallate
      *
      * @since 1.0.0
      */
@@ -50,6 +53,11 @@
         );
     }
 
+    /**
+     * Default font sizes
+     *
+     * @return void
+     */
     public function default_font_sizes() {
         // Add theme support for font sizes.
         add_theme_support(
@@ -81,5 +89,28 @@
                 ],
             ]
         );
+    }
+
+    /**
+     * Register block type
+     *
+     * @return void
+     */
+    public function register_block_type() {
+        // Register script
+        wp_register_script(
+            'xvr-gutenberg-block-cta',
+            get_theme_file_uri( 'assets/js/xvr-gutenburg-block-cta.js' ),
+            [ 'wp-blocks', 'wp-element', 'wp-editor' ],
+            '1.0.0',
+            false,
+        );
+
+        // Register block type
+        register_block_type( 'xvr/thanks-block', [
+            'editor_script' => 'xvr-gutenberg-block-cta',
+            // 'editor_style'  => 'xvr-gutenberg-block-cta',
+            // 'render_callback' => [ $this, 'render_block_testimonial' ],
+        ] );
     }
  }
